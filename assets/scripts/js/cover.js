@@ -1,35 +1,45 @@
+const app = new Vue( {
+	el: "#app",
+	data: {
+		yScroll: 0
+	},
+	methods: {
+		fillerText: function(howBig) {
+			var output = '';
+			while(howBig)
+			{
+				output += 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quasi omnis voluptatem! Nostrum quod incidunt velit tempore maxime perferendis. Perferendis rem optio provident dolorem aperiam quisquam blanditiis animi temporibus omnis.';
+				howBig--;
+			}
+			return output;
+		},
 
-//loading screen handleing
-
-var loadingScreen = document.querySelector('.loader');
-
-window.addEventListener('load', hideLoadingScreen);
-
-function hideLoadingScreen()
-{
-	loadingScreen.classList.add('hidden');
-
-	window.setTimeout(removeLoadingScreen, 1000);
-}
-function removeLoadingScreen()
-{
-	loadingScreen.style.display = 'none';
-}
-
-//navigation handeling
-
-var navigation = document.querySelector('.nav');
-
-window.setInterval(setNavOpacityBehavior, 100);
-
-function setNavOpacityBehavior()
-{
-	if (window.scrollY == 0)
-	{
-		navigation.style.opacity = 1;
+		hideLoadingScreen: function() {
+			var loadingScreen = this.$refs.loader;
+			loadingScreen.classList.add('hidden');
+		
+			window.setTimeout(function() { loadingScreen.style.display = 'none'; }, 1000);
+		},
+		updateYScroll: function() {
+			this.yScroll = window.scrollY;
+		}
+	},
+	computed: {
+		getNavStyles: function() {
+			if (this.yScroll == 0)
+			{
+				return 'opacity: 1;';
+			}
+			else
+			{
+				return '';
+			}
+		}
+	},
+	created: function() {
+		window.addEventListener('scroll', this.updateYScroll);
+		window.addEventListener('load', this.hideLoadingScreen);
 	}
-	else
-	{
-		navigation.style.removeProperty('opacity');
-	}
-}
+});
+
+
