@@ -1,39 +1,39 @@
-.content
+#content
 {
-  margin-top: 5em;
-  width: 100%;
+	margin-top: 5em;
+	width: 100%;
 
-  display: grid;
-  grid-template-columns: 2fr 5fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-row-gap: 4em;
+	display: grid;
+	grid-template-columns: 2fr 5fr 1fr;
+	grid-template-rows: auto auto auto;
+	grid-row-gap: 4em;
 }
 
 .side-header
 {
-  grid-column: 1/2;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  display: block;
+	grid-column: 1/2;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
 }
 .side-header > div
 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  font-family: 'Roboto Mono', monospace;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 40vh;
+	font-weight: bold;
+	font-size: 1.5rem;
+	font-family: 'Roboto Mono', monospace;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 40vh;
 }
 .side-header > div > img
 {
-  width: 25%;
+	width: 25%;
 }
 .center-content
 {
-  grid-column: 2/3;
-  border-left: 0.4rem solid var(--main-color);
+	grid-column: 2/3;
+	border-left: 0.4rem solid var(--main-color);
 }
 
 .about
@@ -42,12 +42,20 @@
 }
 .about img
 {
-  width: 50%;
-  float: left;
+	width: 50%;
 }
+.about .personal-info
+{
+
+}
+.about .proficiencies
+{
+	
+}
+
 .portfolio
 {
-  display: grid;
+	display: grid;
 }
 
 .contact
@@ -57,8 +65,8 @@
 
 @media (max-width: 1200px)
 {
-  .content
-  {
-    margin-top: 0;
-  }
+	.content
+	{
+		margin-top: 0;
+	}
 }

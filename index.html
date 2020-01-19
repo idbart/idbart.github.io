@@ -10,36 +10,25 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	</head>
 	<body>	
-		<div id="app">
-			<div class="loader" ref="loader">
-				<div class="loader-anim">
-				Loading...
-				<div> { <div> <======> </div> } </div>
-				</div>
-			</div>
-
-			<div class="nav" v-bind:style="getNavStyles">
-				<input id="hamburger-checkbox" class="hamburger-checkbox" type="checkbox" name="hamburger-checkbox">
-				<label for="hamburger-checkbox"><div></div></label>
-
-				<img class="logo-img" src="assets/photos/websitetitle.png" alt="Isaac Bartlett Software Developer">
-				<ul>
-				<li><a href="#about">About Me</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#contact">Contact Info</a></li>
-				</ul>
-			</div>
-
-
-			<div class="content">
+		<div id="wrapper">
+			<loader></loader>
+			<navigation></navigation>
+		
+			<div id="content">
 				<div class="side-header about-header">
-				<div>
-					<img src="assets/photos/IsaacSilhouette.png" alt="silhouette of Isaac Bartlett">
-					<br>
-					About Me
-				</div>
+					<div>
+						<img src="assets/photos/IsaacSilhouette.png" alt="silhouette of Isaac Bartlett">
+						<br>
+						About Me
+					</div>
 				</div>
 				<div id="about" class="about center-content">
+					<div class="personal-info">
+
+					</div>
+					<div class="proficiencies">
+
+					</div>
 				</div>
 
 				<div class="side-header portfolio-header">
@@ -63,7 +52,8 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="assets/scripts/js/cover.js"></script>
+		<script type="text/javascript" src="assets/scripts/js/navComponent.js"></script>
+		<script type="text/javascript" src="assets/scripts/js/loaderComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/home.js"></script>
 	</body>
 </html>
