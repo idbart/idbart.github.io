@@ -1,10 +1,9 @@
 #content
 {
-	margin-top: 5em;
 	width: 100%;
 
 	display: grid;
-	grid-template-columns: 2fr 5fr 1fr;
+	grid-template-columns: 1.5fr 5fr 1fr;
 	grid-template-rows: auto auto auto;
 	grid-row-gap: 4em;
 }
@@ -21,7 +20,7 @@
 {
 	font-weight: bold;
 	font-size: 1.5rem;
-	font-family: 'Roboto Mono', monospace;
+	font-family: var(--default-font);
 	position: sticky;
 	position: -webkit-sticky;
 	top: 40vh;
@@ -36,21 +35,97 @@
 	border-left: 0.4rem solid var(--main-color);
 }
 
+
 .about
 {
+	line-height: 3rem;
+	text-indent: 4rem;
 
+	font-family: var(--default-font);
+	font-size: 1.25rem;
+	font-weight: bold;
 }
 .about img
 {
 	width: 50%;
 }
-.about .personal-info
-{
 
-}
-.about .proficiencies
+
+.about > .personal-info
 {
-	
+	margin-top: 15vh;
+	display: grid;
+	grid-template-columns: .5fr 3fr 2fr .25fr;
+	align-items: center;
+	justify-items: center;
+	grid-row-gap: 2rem;
+	grid-column-gap: 2rem;
+}
+
+.about > .personal-info > img:nth-child(odd)
+{
+	grid-column: 2;
+}
+.about > .personal-info > img:nth-child(even)
+{
+	grid-column: 3;
+}
+.about > .personal-info > img
+{
+	transition: box-shadow 500ms ease;
+
+	box-shadow: 17px 20px 3px 0px var(--main-color);
+
+	width: 100%;
+}
+.about > .personal-info > img:hover
+{
+	box-shadow: 10px 11px 3px 0px var(--secondary-color), 17px 20px 3px 0px var(--main-color);
+}
+
+.about > .personal-info > p:nth-child(odd)
+{
+	grid-column: 2;
+}
+.about > .personal-info > p:nth-child(even)
+{
+	grid-column: 3;
+}
+.about > .personal-info > p
+{
+	justify-content: center;
+}
+
+
+.about > .proficiencies
+{
+	margin-left: 5vw;
+	margin-top: 15vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: .5fr 3fr .5fr;
+	grid-template-rows: auto auto;
+	align-items: center;
+	justify-items: center;
+}
+.about > .proficiencies > .proficiencies-intro
+{
+	grid-column: 2;
+}
+.about > .proficiencies > .proficiencies-logos
+{
+	grid-column: 1/4;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	align-items: center;
+	justify-content: center;
+	grid-gap: 2rem;
+}
+
+.about > .proficiencies > .proficiencies-logos > img
+{
+	width: 100%;
 }
 
 .portfolio
@@ -63,10 +138,19 @@
 
 }
 
-@media (max-width: 1200px)
+@media(max-width: 1200px)
 {
 	.content
 	{
 		margin-top: 0;
+	}
+
+	.about > .personal-info
+	{
+		grid-template-columns: .5fr 3fr .5fr;
+	}
+	.about > .personal-info > *
+	{
+		grid-column: 2 !important;
 	}
 }

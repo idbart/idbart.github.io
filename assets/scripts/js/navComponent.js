@@ -24,7 +24,7 @@ Vue.component('navigation', {
 	},
 	computed: {
 		getNavStyles: function() {
-			if (this.yScroll == 0)
+			if (this.yScroll < window.innerHeight)
 			{
 				return 'opacity: 1;';
 			}

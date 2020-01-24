@@ -1,4 +1,4 @@
-var homeHandler = new Vue({
+var homeInstance = new Vue({
 	el: "#wrapper",
 	data: {
 

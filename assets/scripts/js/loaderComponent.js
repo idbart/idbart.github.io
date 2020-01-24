@@ -9,7 +9,7 @@ Vue.component('loader', {
 	`,
 	data: function() {
 		return {
-
+			
 		};
 	},
 	methods: {

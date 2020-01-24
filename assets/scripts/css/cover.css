@@ -3,133 +3,101 @@
 
 :root
 {
-  --main-color: #4a7c8e;
-  --text-color: white;
-  --hamburger-color: black;
+	--default-font: 'Roboto Mono', monospace;
+	--main-color: #4a7c8e;
+	--secondary-color: #00000075;
+	--text-color: white;
+	--hamburger-color: black;
+	--mobile-width: 1200px;
 }
 *
 {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html
 {
-  font-size: 16px;
-  scroll-behavior: smooth;
+	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 body
 {
 }
 
+.header
+{
+	height: 100vh;
+}
+
 .loader
 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--main-color);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--main-color);
 }
 .loader.hidden
 {
-  animation-name: loaderEndAnim;
-  animation-duration: 1000ms;
-  animation-fill-mode: forwards;
-}
-@keyframes loaderEndAnim
-{
-    0%
-    {
-      opacity: 1;
-    }
-    100%
-    {
-      opacity: 0;
-    }
+	animation-name: fadeOut;
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
 }
 .loader .loader-anim
 {
-  display: flex;
-  font-family: 'Inconsolata', monospace;
-  font-weight: bold;
-  font-size: 2rem;
+	display: flex;
+	font-family: 'Inconsolata', monospace;
+	font-weight: bold;
+	font-size: 2rem;
 }
 .loader .loader-anim > div
 {
-  display: flex;
-  animation-name: loadingIconWraper;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-}
-@keyframes loadingIconWraper
-{
-  0%
-  {
-    transform: rotateY(0);
-  }
-  50%
-  {
-    transform: rotateY(180deg);
-  }
-  100%
-  {
-    transform: rotateY(360deg);
-  }
+	display: flex;
+	animation-name: loadingIconWraper;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
 }
 .loader .loader-anim > div > div
 {
-  animation-name: loadingIconInner;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-}
-@keyframes loadingIconInner
-{
-  0%
-  {
-    transform: scale(1, 1);
-  }
-  50%
-  {
-    transform: scale(-1, 1);
-  }
-  100%
-  {
-    transform: scale(1, 1);
-  }
+	animation-name: loadingIconInner;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
 }
 
 
 .nav
 {
-  background-color: var(--main-color);
-  width: 100%;
-  height: 5em;
-  position: fixed;
-  top: 0;
-  display: grid;
-  grid-template-columns: 1fr 3fr 3fr 1fr;
-  opacity: 0.5;
-  transition: opacity 500ms ease;
+	grid-column: 1/4;
+	background-color: var(--main-color);
+	width: 100%;
+	height: 5em;
+	position: sticky;
+	top: 0;
+	display: grid;
+	grid-template-columns: 1fr 3fr 3fr 1fr;
+	opacity: 0.5;
+	transition: opacity 500ms ease;
 }
 .nav:hover
 {
-  opacity: 1;
+	opacity: 1;
 }
 .nav .logo-img
 {
-  width: 150%;
-  jusify-self: center;
-  align-self: center;
+	width: 150%;
+	jusify-self: center;
+	align-self: center;
 }
 
 .nav > input
 {
-  display: none;
+	display: none;
 }
 .nav input:checked
 {
@@ -137,7 +105,7 @@ body
 }
 .nav > label
 {
-  display: none;
+	display: none;
 }
 .nav > label::before
 {
@@ -150,160 +118,161 @@ body
 
 .nav > ul
 {
-  jusify-self: center;
-  align-self: center;
-  grid-column: 3/5;
+	jusify-self: center;
+	align-self: center;
+	grid-column: 3/5;
 }
 .nav > ul li
 {
-  display: inline;
+	display: inline;
 }
 .nav > ul li:hover
 {
 }
 .nav > ul li a
 {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-color);
-  margin-left: 2em;
-  text-transform: uppercase;
-  position: relative;
+	font-size: 1.2rem;
+	text-decoration: none;
+	color: var(--text-color);
+	margin-left: 2em;
+	text-transform: uppercase;
+	position: relative;
 }
 .nav > ul li a::after
 {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--text-color);
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: var(--text-color);
 
-  transform: scale(0, 1);
-  transform-origin: left;
-  transition: transform 500ms ease-in-out;
+	transform: scale(0, 1);
+	transform-origin: left;
+	transition: transform 500ms ease-in-out;
 }
 .nav > ul li:hover a::after
 {
-  transform: scale(1, 1);
+	transform: scale(1, 1);
 }
 
 
-@media (max-width: 1200px)
+@media(max-width: 1200px)
 {
-  html
-  {
-    font-size: 12px;
-  }
+	html
+	{
+		font-size: 12px;
+	}
 
-  .nav
-  {
-    z-index: 99;
-    grid-template-columns: auto 3fr 3fr 1fr;
-    background-color: transparent;
-    opacity: 1;
-  }
-  .nav > img
-  {
-    display: none;
-  }
-  .nav > input
-  {
-    display: none;
-  }
-  .nav > input:checked
-  {
+	.nav
+	{
+		font-size: 1.5rem;
+		z-index: 99;
+		grid-template-columns: auto 3fr 3fr 1fr;
+		background-color: transparent;
+		opacity: 1;
+	}
+	.nav > img
+	{
+		display: none;
+	}
+	.nav > input
+	{
+		display: none;
+	}
+	.nav > input:checked
+	{
 
-  }
-  .nav > label
-  {
-    justify-self: center;
-    align-self: center;
-    height: 100%;
-    width: auto;
-    display: flex;
-    transition: background-color 200ms ease 200ms;
-  }
-  .nav > input:checked ~ label
-  {
-    background-color: var(--main-color);
-    transition: background-color 200ms ease 500ms;
-  }
-
-
-  .nav > label > div
-  {
-    position: relative;
-    align-self: center;
-    margin: 0 30%;
-    width: 75px;
-    height: 2px;
-    background-color: var(--hamburger-color);
-  }
-  .nav > label:hover > div
-  {
-    transform: rotate(45deg);
-  }
-  .nav > label > div::before
-  {
-    content: '';
-    position: absolute;
-    top: -12px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--hamburger-color);
-  }
-  .nav > label > div::after
-  {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--hamburger-color);
-  }
-  .nav > label > div, .nav > label > div::before, .nav > label > div::after
-  {
-    transition: transform 500ms ease, top 200ms ease, bottom 200ms ease;
-  }
-
-  .nav > input:checked ~ label > div
-  {
-    transform: rotate(45deg);
-  }
-  .nav > input:checked ~ label > div::before
-  {
-    top: 0;
-  }
-  .nav > input:checked ~ label > div::after
-  {
-    bottom: 0;
-    transform: rotate(90deg);
-  }
+	}
+	.nav > label
+	{
+		justify-self: center;
+		align-self: center;
+		height: 100%;
+		width: auto;
+		display: flex;
+		transition: background-color 200ms ease 200ms;
+	}
+	.nav > input:checked ~ label
+	{
+		background-color: var(--main-color);
+		transition: background-color 200ms ease 500ms;
+	}
 
 
-  .nav > ul
-  {
-    transform: scale(0, 1);
-    transition: transform 500ms ease, background-color 500ms ease;
-    transform-origin: left;
+	.nav > label > div
+	{
+		position: relative;
+		align-self: center;
+		margin: 0 30%;
+		width: 75px;
+		height: 2px;
+		background-color: var(--hamburger-color);
+	}
+	.nav > label:hover > div
+	{
+		transform: rotate(45deg);
+	}
+	.nav > label > div::before
+	{
+		content: '';
+		position: absolute;
+		top: -12px;
+		width: 100%;
+		height: 2px;
+		background-color: var(--hamburger-color);
+	}
+	.nav > label > div::after
+	{
+		content: '';
+		position: absolute;
+		bottom: -12px;
+		width: 100%;
+		height: 2px;
+		background-color: var(--hamburger-color);
+	}
+	.nav > label > div, .nav > label > div::before, .nav > label > div::after
+	{
+		transition: transform 500ms ease, top 200ms ease, bottom 200ms ease;
+	}
 
-    grid-column: 2/5;
-    justify-self: middle;
-    height: 100%;
+	.nav > input:checked ~ label > div
+	{
+		transform: rotate(45deg);
+	}
+	.nav > input:checked ~ label > div::before
+	{
+		top: 0;
+	}
+	.nav > input:checked ~ label > div::after
+	{
+		bottom: 0;
+		transform: rotate(90deg);
+	}
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .nav > ul > li
-  {
-    align-self: center;
-  }
-  .nav input:checked ~ ul
-  {
-    transform: scale(1, 1);
-    transform-origin: right;
-    background-color: var(--main-color);
-  }
+
+	.nav > ul
+	{
+		transform: scale(0, 1);
+		transition: transform 500ms ease, background-color 500ms ease;
+		transform-origin: left;
+
+		grid-column: 2/5;
+		justify-self: middle;
+		height: 100%;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.nav > ul > li
+	{
+		align-self: center;
+	}
+	.nav input:checked ~ ul
+	{
+		transform: scale(1, 1);
+		transform-origin: right;
+		background-color: var(--main-color);
+	}
 }

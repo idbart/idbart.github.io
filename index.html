@@ -5,55 +5,97 @@
 		<meta name="description" content="Hello my name is Isaac Bartlett, I am a software developer from Maine.">
 		<link rel="shortcut icon" type="image/png" href="assets/photos/IsaacSilhouette.png">
 		<title>Isaac Bartlett</title>
+		<link rel="stylesheet" type="text/css" href="assets/scripts/css/animations.css">
 		<link rel="stylesheet" type="text/css" href="assets/scripts/css/cover.css">
 		<link rel="stylesheet" type="text/css" href="assets/scripts/css/home.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
 	</head>
 	<body>	
 		<div id="wrapper">
 			<loader></loader>
-			<navigation></navigation>
-		
-			<div id="content">
-				<div class="side-header about-header">
-					<div>
-						<img src="assets/photos/IsaacSilhouette.png" alt="silhouette of Isaac Bartlett">
-						<br>
-						About Me
+			<page-header></page-header>
+
+			<div id="navigation-bounds">
+				<navigation></navigation>
+
+				<div id="content">
+					
+					<div class="side-header about-header">
+						<div>
+							<img src="assets/photos/IsaacSilhouette.png" alt="silhouette of Isaac Bartlett">
+							<br>
+							About Me
+						</div>
 					</div>
-				</div>
-				<div id="about" class="about center-content">
-					<div class="personal-info">
+					<div id="about" class="about center-content">
+						<div class="personal-info">
+							<p>
+								Hello, my name is Isaac. I am a software developer from the United States.
+							</p>
+							<img src="assets/photos/isaac-about.jpg" alt="Photo of Isaac Bartlett">
 
+							<img src="assets/photos/breakwater-croped.jpg" alt="Photo of the breakwater in rockland Maine">
+							<p>
+								I was born and raised in the state of Maine, where I still reside to this day.
+							</p>
+
+							<p>
+								When I was sixteen years old, I found a passion for software engineering through an Interactive Media class, which I took at my local vocational school.
+							</p>
+							<img src="assets/photos/code2.jpg" alt="Photo of a computer monitor">
+
+							<img src="assets/photos/umaine.png" alt="Photo of the University of Maine logo">
+							<p>
+								Now, I am a student at the University of Maine, where I study computer science.
+							</p>
+						</div>
+						<div class="proficiencies">
+							<div class="proficiencies-intro">
+								When I was sixteen, I started by developing video games with the Unity engine, but I am now proficient in a number of technologies, frameworks, and languages such as:
+							</div>
+							<div class="proficiencies-logos">
+								<img src="assets/photos/C_Sharp_logo.png" alt="">
+								<img src="assets/photos/Unity-logo.png" alt="">
+								<img src="assets/photos/Git-logo.png" alt="">
+								<img src="assets/photos/PHP-logo.png" alt="">
+								<img src="assets/photos/MySQL-logo.png" alt="">
+								<img src="assets/photos/JavaScript-logo.png" alt="">
+								<img src="assets/photos/VUEjs-logo.png" alt="">
+								<img src="assets/photos/p5-logo.jpg" alt="">
+								<img src="assets/photos/Node.js_logo.png" alt="">
+								<img src="assets/photos/Npm-logo.png" alt="">
+								<img src="assets/photos/mongodb-logo.png" alt="">
+								<img src="assets/photos/Docker_logo.png" alt="">
+							</div>
+						</div>
 					</div>
-					<div class="proficiencies">
 
+					<div class="side-header portfolio-header">
+						<div>
+							<img src="assets/photos/resume.png" alt="silhouette of portfolio">
+							<br>
+							My Portfolio
+						</div>
 					</div>
-				</div>
+					<div id="portfolio" class="portfolio center-content">
+					</div>
 
-				<div class="side-header portfolio-header">
-				<div>
-					<img src="assets/photos/resume.png" alt="silhouette of portfolio">
-					<br>
-					My Portfolio
-				</div>
-				</div>
-				<div id="portfolio" class="portfolio center-content">
-				</div>
-
-				<div class="side-header contact-header">
-				<div>
-					<img src="assets/photos/mail.png" alt="silhouette of a letter">
-					<br>
-					Contact Information
-				</div>
-				</div>
-				<div id="contact" class="contact center-content">
+					<div class="side-header contact-header">
+						<div>
+							<img src="assets/photos/mail.png" alt="silhouette of a letter">
+							<br>
+							Contact Information
+						</div>
+					</div>
+					<div id="contact" class="contact center-content">
+					</div>
 				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="assets/scripts/js/navComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/loaderComponent.js"></script>
+		<script type="text/javascript" src="assets/scripts/js/headerComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/home.js"></script>
 	</body>
 </html>
