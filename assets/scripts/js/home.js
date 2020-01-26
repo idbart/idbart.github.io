@@ -1,7 +1,7 @@
 var homeInstance = new Vue({
 	el: "#wrapper",
 	data: {
-
+		currentYear: new Date().getFullYear()
 	},
 	methods: {
 		fillerText: function(howBig) {

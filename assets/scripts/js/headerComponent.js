@@ -19,7 +19,7 @@ Vue.component('page-header', {
 			p.setup = () => {
 				p.createCanvas(window.innerWidth, window.innerHeight);
 				
-				var numberOfPartilcles = Math.floor(window.innerHeight / 10);
+				var numberOfPartilcles = Math.floor(window.innerHeight / 15);
 				for(var i = 0; i < numberOfPartilcles; i++)
 				{
 					var part = new Particle(p, this.possibleParticleChars);
