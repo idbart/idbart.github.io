@@ -114,6 +114,7 @@
 }
 .about > .proficiencies > .proficiencies-logos
 {
+	margin-top: 5vh;
 	grid-column: 1/4;
 
 	display: grid;
@@ -135,7 +136,160 @@
 
 .contact
 {
+	display: grid;
+	grid-template-columns: 0.25fr 2fr 0.25fr;
+	grid-row-gap: 3rem;
+	align-items: center;
+}
+.contact .contact-top-text
+{
+	padding: 10vh 0;
+	width: 100%;
+	text-align: center;
 
+	grid-column: 2;
+	font-family: var(--default-font);
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+
+.contact > .contact-wrapper
+{
+	grid-column: 2;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+.contact > .contact-wrapper:nth-child(odd)
+{
+}
+.contact > .contact-wrapper:nth-child(even)
+{
+}
+
+.contact .contact-inner-wrapper
+{
+	box-shadow: 20px -16px black;
+	border: .2rem solid var(--secondary-color);
+
+	width: 70%;
+
+	align-self: center;
+	justify-self: center;
+
+	display: grid;
+	grid-template-rows: auto auto;
+	justify-content: center;
+
+	transition: transform 1s ease-in-out;
+}
+.contact .contact-inner-wrapper:hover
+{
+	transform: rotateZ(0deg) !important;
+}
+.contact > .contact-wrapper:nth-child(odd) .contact-inner-wrapper
+{
+	grid-column: 1;
+	transform: rotateZ(-5deg);
+}
+.contact > .contact-wrapper:nth-child(even) .contact-inner-wrapper
+{
+	grid-column: 2;
+	transform: rotateZ(5deg);
+}
+
+.contact .contact-main
+{
+	width: 100%;
+	display: grid;
+	justify-content: center;
+}
+.contact .contact-main img
+{
+	height: 10vw;
+	margin-top: 2vh;
+}
+
+
+.contact .contact-ext-wrapper
+{
+	position: relative;
+	width: 100%;
+}
+.contact .contact-ext
+{
+	width: 100%;
+
+	font-size: 1.5rem;
+	text-align: center;
+
+	display: grid;
+	grid-template-rows: auto auto;
+}
+.contact .contact-ext-hidden
+{
+	
+}
+.contact .contact-ext-showing
+{
+
+}
+
+.contact .contact-ext a
+{
+	font-style: normal;
+	font-family: var(--default-font);
+	text-decoration: none;
+	color: black;
+
+	height: 15vh;
+
+	display: grid;
+	align-items: center;
+
+	transition: height 1s ease-in-out, transform 1s ease-in-out;
+}
+.contact .contact-ext-hidden a
+{
+	transform: scaleY(0);
+	height: 0;
+}
+.contact .contact-ext-showing a
+{
+}
+.contact .contact-button
+{
+	width: 100%;
+	user-select: none;
+
+	transition: transform 500ms ease, background 1s ease;
+}
+.contact .contact-button:hover
+{
+	cursor: pointer;
+	background: rgb(34, 255, 34);
+	transform: scale(1.2);
+}
+.contact .contact-button > img 
+{
+	width: 3vw;
+	transition: transform 200ms ease-in-out;
+}
+.contact .contact-ext-showing .contact-button > img
+{
+	transform: rotate(180deg);
+}
+
+footer
+{
+	grid-column: 2;
+	width: 100%;
+	text-align: center;
+	font-family: var(--default-font);
+	padding-bottom: 5vh;
+	padding-top: 10vh;
 }
 
 @media(max-width: 1200px)
@@ -152,5 +306,24 @@
 	.about > .personal-info > *
 	{
 		grid-column: 2 !important;
+	}
+
+	.about > .proficiencies > .proficiencies-logos
+	{
+		grid-template-columns: 1fr 1fr 1fr !important;
+	}
+
+	.contact > .contact-wrapper
+	{
+		grid-template-columns: 1fr;
+	}
+	.contact .contact-inner-wrapper
+	{
+		grid-column: 1 !important;
+		transform: rotateZ(0deg) !important;
+	}
+	.contact .contact-button > img 
+	{
+		width: 10vw;
 	}
 }

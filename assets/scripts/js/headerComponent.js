@@ -56,7 +56,7 @@ class Particle
 	constructor(p, charList) {
 		this.p = p;
 		this.position = this.p.createVector(this.p.random(this.p.width), this.p.random(this.p.height));
-		this.velocity = this.p.createVector(this.p.random(-2, 2), this.p.random(-2, 2));
+		this.velocity = this.p.createVector(this.p.random(-5, 5), this.p.random(-4, 4));
 		this.char = this._generateChar(charList);
 	}
 	_generateChar(possibleChars) {
@@ -65,7 +65,7 @@ class Particle
 	}
 	draw() {
 		this.p.fill(93, 168, 195);
-		this.p.textSize(40);
+		this.p.textSize(35);
 		this.p.text(this.char, this.position.x, this.position.y);
 	}
 	update() {
@@ -94,6 +94,13 @@ class Particle
 				this.p.stroke(93, 168, 195);
 				this.p.line(this.position.x, this.position.y, particle.position.x, particle.position.y);
 			}
+		}
+
+		var distanceToMouse = this.p.dist(this.position.x, this.position.y, this.p.mouseX, this.p.mouseY);
+		if(distanceToMouse < 300)
+		{
+			this.p.stroke(93, 168, 195);
+			this.p.line(this.position.x, this.position.y, this.p.mouseX, this.p.mouseY);
 		}
 	}
 }
