@@ -50,6 +50,7 @@
 								I started by developing video games with the Unity engine, but I am now proficient in a wide stack of technologies, frameworks, and languages such as:
 							</div>
 							<div class="proficiencies-logos">
+								<img src="assets/photos/net-logo.png" alt="">
 								<img src="assets/photos/VS-Icon.png" alt="">
 								<img src="assets/photos/cpp_logo.png" alt="">
 								<img src="assets/photos/C_Sharp_logo.png" alt="">
@@ -71,6 +72,10 @@
 						</div>
 					</div>
 
+
+					<!----------------------------------------------------------------------------------------------------------------------------------------------->
+
+					
 					<div class="side-header portfolio-header">
 						<div>
 							<img src="assets/photos/resume.png" alt="silhouette of portfolio">
@@ -79,7 +84,52 @@
 						</div>
 					</div>
 					<div id="portfolio" class="portfolio center-content">
+						<div class="portfolio-header">
+							Take a look at some of the projects I have worked on:
+						</div>
+						<div class="portfolio-section portfolio-videogames">
+							<div class="portfolio-section-header portfolio-videogames-header">
+								Video Games
+							</div>
+							<div class="portfolio-section-body portfolio-videogames-body">
+								<portfolio-item image="assets/photos/videogames-portfolio-icon.png" title="Video Game Development Reel" video="ZrnXCJf2TDs">
+									This is a reel showcasing many of the video game projects that I have worked on. The majority of these games were made with the Unity engine and programmed with Unity's C# API. As you will see, many of these where team projects involving multiple members. Aside from the fact that I got a lot of experience working with teams, I particularly enjoyed these projects because they gave me the opportunity to learn about other areas of digital design. For example: in many of these projects I was able to work on the 3D models used.   
+								</portfolio-item>
+							</div>
+						</div>
+						<div class="portfolio-section portfolio-web">
+							<div class="portfolio-section-header portfolio-web-header">
+								Web
+							</div>
+							<div class="portfolio-section-body portfolio-web-body">
+								<portfolio-item image="assets/photos/IAM-webpage-portfolio-icon.png" title="Inspiration Aviation Ministries Webpage">
+									This is a webpage that I maintain for a non-profit called Inspiration Aviation Ministries. The front end code for this page was done from scratch (HTML, CSS, JS), and the back end is running on a PHP/MySQL stack. This was the first webpage that I ever published, and I have learned a lot since then. You can visit this webpage at: <a href="http://inspirationaviation.org/" target="_blank">http://inspirationaviation.org/</a> 
+								</portfolio-item>
+							</div>
+						</div>
+						<div class="portfolio-section portfolio-desktop-applications">
+							<div class="portfolio-section-header portfolio-desktop-application-header">
+								Desktop Applications
+							</div>
+							<div class="portfolio-section-body portfolio-desktop-application-body">
+								<portfolio-item image="assets/photos/passwordgen-portfolio-icon.png" title="Password Generator" downloads="PasswordGenerator.zip" github="https://github.com/idbart/Password_Generator">
+									This is a fun little project that I wrote for the .NET Framework in C#. The program is simply a console applicaton that generates a pseudo-random password when given a keyword. I say pseudo-random because the application does not simply give you back a mess of completely random characters, but rather, a compilation of real words strung together after some manipulation. The keyword given will be used as one of the words in the password 100% of the time.
+								</portfolio-item>
+							</div>
+						</div>
+						<!--<div class="portfolio-section portfolio-mobile-applications">
+							<div class="portfolio-section-header portfolio-mobile-applications-header">
+								Mobile Applications
+							</div>
+							<div class="portfolio-section-body portfolio-mobile-applications-body">
+								
+							</div>
+						</div> -->
 					</div>
+
+
+					<!----------------------------------------------------------------------------------------------------------------------------------------------->
+
 
 					<div class="side-header contact-header">
 						<div>
@@ -95,15 +145,18 @@
 						<contact link="mailto:isadbart@gmail.com" image="assets/photos/mail.png" text="isadbart@gmail.com"></contact>
 						<contact link="https://www.facebook.com/isaac.bartlett.906" image="assets/photos/fbookicon.png" text="Isaac Bartlett"></contact>
 						<contact link="https://twitter.com/Idbartlett" image="assets/photos/twittericon.png" text="@Idbartlett"></contact>
+						<contact link="https://www.instagram.com/idbart" image="assets/photos/instagram-logo.png" text="@idbart"></contact>
 					</div>
 
 					<footer> © Isaac Bartlett {{currentYear}} </footer>
 				</div>
 			</div>
 		</div>
+		
 		<script type="text/javascript" src="assets/scripts/js/navComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/loaderComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/headerComponent.js"></script>
+		<script type="text/javascript" src="assets/scripts/js/portfolioItemComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/contactComponent.js"></script>
 		<script type="text/javascript" src="assets/scripts/js/home.js"></script>
 	</body>

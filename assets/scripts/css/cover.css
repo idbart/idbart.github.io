@@ -7,6 +7,7 @@
 	--main-color: #4a7c8e;
 	--secondary-color: #00000075;
 	--text-color: white;
+	--text-indent: 4rem;
 	--hamburger-color: black;
 	--mobile-width: 1200px;
 }
@@ -19,6 +20,7 @@ html
 {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body
@@ -35,7 +37,7 @@ body
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 99;
+	z-index: 200;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
