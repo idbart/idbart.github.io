@@ -37,11 +37,11 @@ Vue.component('page-header', {
 			};
 			p.draw = () => {
 				p.background(74, 124, 142);
-				for(particle of this.particles)
+				for(var i = 0; i < this.particles.length; i++)
 				{
-					particle.update();
-					particle.draw();
-					particle.connect(this.particles);
+					this.particles[i].update();
+					this.particles[i].draw();
+					this.particles[i].connect(this.particles, i);
 				}
 
 				var imageSizeFactor = (p.width / 2000);
@@ -62,28 +62,33 @@ Vue.component('page-header', {
 
 class Particle 
 {
-	constructor(p, charList) {
+	constructor(p, charList) 
+	{
 		this.p = p;
 		this.position = this.p.createVector(this.p.random(this.p.width), this.p.random(this.p.height));
 		this.velocity = this.p.createVector(this.p.random(-5, 5), this.p.random(-4, 4));
 		this.char = this._generateChar(charList);
 	}
-	_generateChar(possibleChars) {
+	_generateChar(possibleChars)
+	{
 		var index = Math.round(this.p.random(0, possibleChars.length - 1));
 		return possibleChars[index];
 	}
-	draw() {
+	draw() 
+	{
 		this.p.fill(93, 168, 195);
 		this.p.textSize(35);
 		this.p.text(this.char, this.position.x, this.position.y);
 	}
-	update() {
+	update() 
+	{
 		this.detectEdges();
 		this.position.x += this.velocity.x;
 		this.position.y += this.velocity.y;
 	}
 
-	detectEdges() {
+	detectEdges() 
+	{
 		if(this.position.x < 0 || this.position.x > this.p.width)
 		{
 			this.velocity.x *= -1;
@@ -94,14 +99,15 @@ class Particle
 		}
 	}
 
-	connect(particles) {
-		for(particle of particles)
+	connect(particles, startIndex) 
+	{
+		for(var i = startIndex; i < particles.length; i++)
 		{
-			var distance = this.p.dist(this.position.x, this.position.y, particle.position.x, particle.position.y);
+			var distance = this.p.dist(this.position.x, this.position.y, particles[i].position.x, particles[i].position.y);
 			if(distance < 200)
 			{
 				this.p.stroke(93, 168, 195);
-				this.p.line(this.position.x, this.position.y, particle.position.x, particle.position.y);
+				this.p.line(this.position.x, this.position.y, particles[i].position.x, particles[i].position.y);
 			}
 		}
 
