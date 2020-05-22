@@ -10,8 +10,8 @@ Vue.component('portfolio-item', {
 
 					<div class="portfolio-item-popup-inner-content">
 						<div class="portfolio-item-popup-text"><slot></slot></div>
-						<a class="portfolio-item-popup-download" v-if="downloads" v-bind:href="downloadsLink" v-bind:download="title"><img src="assets/photos/download-icon.png" alt="Github Logo"></a>
-						<a class="portfolio-item-popup-github" v-if="github" v-bind:href="github" target="_blank"><img src="assets/photos/github-logo.png" alt="Github Logo"></a>
+						<a class="portfolio-item-popup-download" v-if="downloads" v-bind:href="downloadsLink" v-bind:download="title"><i class="fas fa-file-download"></i> Download</a>
+						<a class="portfolio-item-popup-github" v-if="github" v-bind:href="github" target="_blank"><i class="fab fa-github-square"></i> Git Hub</a>
 					</div>
 				</div>
 			</div>

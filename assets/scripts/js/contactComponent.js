@@ -12,7 +12,7 @@ Vue.component('contact', {
 								{{text}}
 							</div>
 						</a>
-						<div class="contact-button" v-on:click="toggleExtension()"> <img src="assets/photos/arrow.png" alt=""> </div>
+						<div class="contact-button" v-on:click="toggleExtension()"> <i class="fas fa-arrow-down fa-3x"></i> </div>
 					</div>
 				</div>
 			</div>

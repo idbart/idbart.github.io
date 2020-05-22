@@ -275,6 +275,7 @@
 {
 	width: 100%;
 	height: 100%;
+	margin-bottom: 4rem;
 
 	align-self: baseline;
 	grid-column: 2/4;
@@ -314,9 +315,33 @@
 	font-size: 1rem;
 }
 
-.portfolio .portfolio-item-popup-inner-content > a > img
+.portfolio .portfolio-item-popup-inner-content > a > i
 {
-	width: 50%;
+	margin-right: 1rem;
+}
+.portfolio .portfolio-item-popup-inner-content > a
+{
+	align-self: center;
+	justify-self: center;
+
+	width: 15rem;
+	height: 4rem;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: var(--main-color);
+	background-color: var(--secondary-color);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition-duration: 100ms;
+}
+.portfolio .portfolio-item-popup-inner-content > a:hover
+{
+	color: black;
+	opacity: .7;
 }
 .portfolio .portfolio-item-popup-download
 {
@@ -325,8 +350,6 @@
 }
 .portfolio .portfolio-item-popup-github
 {
-	width: 100%;
-
 	grid-column: 2;
 	grid-row: 2;
 }
@@ -473,12 +496,11 @@
 	background: rgb(34, 255, 34);
 	transform: scale(1.2);
 }
-.contact .contact-button > img 
+.contact .contact-button > i 
 {
-	width: 3vw;
 	transition: transform 200ms ease-in-out;
 }
-.contact .contact-ext-showing .contact-button > img
+.contact .contact-ext-showing .contact-button > i
 {
 	transform: rotate(180deg);
 }
